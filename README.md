@@ -179,15 +179,21 @@ To run this project, you need to have flutter `Flutter (Channel stable, 2.5.3).`
    3. Once that has been completed, navigate to the ios folder inside the WhatNews project. Assuming you are using a Mac book, you need to do this via the `Finder.`
    4. Once there, navigate to the `build` folder and select the ios folder
    5. Then navigate to the `ios/archive` folder. When there, double-click on the file; this will open up Xcode, which you can use to deploy to TestFlight
+
+### Environment variables
+
+See <b>.env.sample</b> file
+
 ### Challenges
-- The biggest challenge I faced was related to the API not returning the text version of the News Article. This requires some further work to scrap the data from the hosted news source, but that's out of scope for this task, so instead, I decided I would render the news article via a web view instead of a custom view 
+
+- The biggest challenge I faced was related to the API not returning the text version of the News Article. This requires some further work to scrap the data from the hosted news source, but that's out of scope for this task, so instead, I decided I would render the news article via a web view instead of a custom view
 - Based on the above challenge, I wasn't able to get the word frequency of each article since it requires further scraping from the host
 - I couldn't unit-test the exact NewsRepository service since it uses caching, which requires access to a temporary directory. Since running unit tests using flutter does occur on a simulated device, this is not possible. I was tempted to mock functionality, but it didn't help since it won't be an indication of the implementation used by the app.
 
 ### Screenshots
+
 ![Alt text](screenshots/1.png "Optional Title")
 ![Alt text](screenshots/2.png "Optional Title")
 ![Alt text](screenshots/3.png "Optional Title")
 ![Alt text](screenshots/4.png "Optional Title")
 ![Alt text](screenshots/5.png "Optional Title")
-
