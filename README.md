@@ -158,6 +158,8 @@ For fetching news articles, there is a NewsRepository interface which defines th
   This function initializes the API services; this requires passing in an API key and baseURL for the API key provider.
 ```
 
+
+### News API Provider
 For testing purpose i used the <a href=" https://newsapi.org/" target="_blank">NewsAPI</a> provider.
 
 ### How to run
