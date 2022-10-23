@@ -76,7 +76,7 @@ class WhatsNewNewsArticleListItemWidget extends StatelessWidget {
                           textColor: darkGrey,
                           text: newsArticleModel.title.substring(
                                   0,
-                                  (newsArticleModel.title.length / 2.5)
+                                  (newsArticleModel.title.length / 3)
                                       .round()) +
                               "...",
                           fontWeight: FontWeight.bold,

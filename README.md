@@ -166,7 +166,7 @@ For testing purpose i used the <a href="https://newsapi.org/" target="_blank">Ne
 
 ### How to run
 
-To run this project, you need to have flutter `Flutter (Channel stable, 2.5.3).`
+To run this project, you need to have flutter `Flutter version 3.3.5 on channel stable.`
 
 ### Please create the environment folder under the asset folder and create the .env file there
 
@@ -206,4 +206,4 @@ See <b>.env.sample</b> file
 
 ### APK
 
-<a href="https://siasky.net/AAD1GRvaGayGm60iN4cs_Wm737b3gt6AT48fSY1q7ZQy8A" target="_blank">WhatNews APK</a>
+<a href="https://drive.google.com/file/d/1XwIGYxo5wkCJRfFuJcKrsckAisOu8I14/view?usp=sharing" target="_blank">WhatNews APK</a>

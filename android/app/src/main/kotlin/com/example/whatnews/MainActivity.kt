@@ -1,4 +1,4 @@
-package com.whatnews
+package com.example.whatnews
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,6 +16,7 @@ import 'package:whatnews/services/repository/news_repository.dart';
 import 'package:whatnews/shared/ui/app_colors.dart';
 import 'package:whatnews/shared/ui/utils.dart';
 import 'package:whatnews/views/splashscreen/whatnews_splash_screen_view.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 import 'locators/service_locator.dart';
 
@@ -27,21 +29,26 @@ void main() {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    Future.value([
-      await setupLocator(),
-      await FlutterStatusbarcolor.setStatusBarColor(statusBarColor),
-    ]);
+    if (kIsWeb || Platform.isMacOS) {
+      await setupLocator();
+    } else {
+      SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        systemNavigationBarColor: statusBarColor,
+        statusBarColor: statusBarColor,
+        statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+        statusBarBrightness: Brightness.light, // For iOS (dark icons)
+      ));
+      Future.value([
+        await setupLocator(),
+        await FlutterStatusbarcolor.setStatusBarColor(statusBarColor),
+      ]);
+    }
     AppDetails appDetails =
         await getAppDetails(); //@dev tried using Future.wait but it doesn't work well
     UserLocationDetailsModel userLocationDetails = await getUserLocation();
     locator.get<AppScopedModel>().setApplicationDetails(appDetails);
     locator.get<AppScopedModel>().setLocationDetails(userLocationDetails);
     locator.get<NewsRepository>().setAppCacheManager();
-    final webScraper = WebScraper('http://espn.go.com/nfl/story/_/id/34857974/sources-49ers-likely-christian-mccaffrey-vs-chiefs');
-    if (await webScraper.loadWebPage('/test-sites/e-commerce/allinone')) {
-      List<Map<String, dynamic>> elements = webScraper.getElement('h3.title > a.caption', ['href']);
-      print(elements);
-    }
     runApp(const MyApp());
   }, (error, stackTrace) {
     if (kDebugMode) {
@@ -56,12 +63,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      systemNavigationBarColor: statusBarColor,
-      statusBarColor: statusBarColor,
-      statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
-      statusBarBrightness: Brightness.light, // For iOS (dark icons)
-    ));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       builder: (context, widget) {
