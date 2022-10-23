@@ -1,0 +1,17 @@
+
+.DS_Store
+.idea/
+assets/environment/
+build/*
+pubspec.lock
+.flutter-plugins-dependencies
+.flutter-plugins/*
+packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.dart_tool/**
+.packages
+.idea/vcs.xml
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
