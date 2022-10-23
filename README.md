@@ -164,6 +164,8 @@ For testing purpose i used the <a href=" https://newsapi.org/" target="_blank">N
 
 To run this project, you need to have flutter `Flutter (Channel stable, 2.5.3).`
 
+### Please create the environment folder under the asset folder and create the .env file there
+
 ### Building App
 
 1. For Android, if using <b>Android Studio</b>
@@ -197,3 +199,7 @@ See <b>.env.sample</b> file
 ![Alt text](screenshots/3.png "Optional Title")
 ![Alt text](screenshots/4.png "Optional Title")
 ![Alt text](screenshots/5.png "Optional Title")
+
+### APK
+
+<a href="https://siasky.net/AAD1GRvaGayGm60iN4cs_Wm737b3gt6AT48fSY1q7ZQy8A" target="_blank">WhatNews APK</a>

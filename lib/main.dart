@@ -6,6 +6,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
+import 'package:web_scraper/web_scraper.dart';
 import 'package:whatnews/models/application/app_details.dart';
 import 'package:whatnews/models/location/user_location_details_model.dart';
 import 'package:whatnews/scoped_models/app_store_scoped_model.dart';
@@ -36,7 +37,11 @@ void main() {
     locator.get<AppScopedModel>().setApplicationDetails(appDetails);
     locator.get<AppScopedModel>().setLocationDetails(userLocationDetails);
     locator.get<NewsRepository>().setAppCacheManager();
-
+    final webScraper = WebScraper('http://espn.go.com/nfl/story/_/id/34857974/sources-49ers-likely-christian-mccaffrey-vs-chiefs');
+    if (await webScraper.loadWebPage('/test-sites/e-commerce/allinone')) {
+      List<Map<String, dynamic>> elements = webScraper.getElement('h3.title > a.caption', ['href']);
+      print(elements);
+    }
     runApp(const MyApp());
   }, (error, stackTrace) {
     if (kDebugMode) {
