@@ -158,8 +158,10 @@ For fetching news articles, there is a NewsRepository interface which defines th
   This function initializes the API services; this requires passing in an API key and baseURL for the API key provider.
 ```
 
+See service folder <a href="https://github.com/Brianspha/whatnews/blob/main/lib/services/repository/news_repository.dart" target="_blank">Implementation</a>
 
 ### News API Provider
+
 For testing purpose i used the <a href="https://newsapi.org/" target="_blank">NewsAPI</a> provider.
 
 ### How to run
