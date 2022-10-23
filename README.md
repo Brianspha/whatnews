@@ -35,10 +35,9 @@ In this way, you have one AppModel that extends Mixins, which are also of type M
 **Cons:**
 
 - More Models to be aware of and manage
-- More boilerplate code when creating a new view ([appskeletons](https://www.appskeletons.com) can take care of that :)
+- More boilerplate code when creating a new view
 - Harder to make use of Logic from other models (which should never happen anyway)
 
-I have implemented my first production Flutter app for a client using ScopedModel with the first structure I described. For this template, I am now leaning towards the second one because of how mixed up the state management became, having to cater for multiple views from a single feature model.
 
 ### The implementation
 
