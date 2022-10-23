@@ -160,7 +160,7 @@ For fetching news articles, there is a NewsRepository interface which defines th
 
 
 ### News API Provider
-For testing purpose i used the <a href=" https://newsapi.org/" target="_blank">NewsAPI</a> provider.
+For testing purpose i used the <a href="https://newsapi.org/" target="_blank">NewsAPI</a> provider.
 
 ### How to run
 
